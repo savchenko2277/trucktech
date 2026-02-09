@@ -1,0 +1,52 @@
+@use 'lib' as *;
+
+.social-links {
+	$self: &;
+
+	position: fixed;
+	bottom: 24px; right: 24px;
+	display: grid;
+	grid-template-rows: 0fr max-content;
+	transition: all $transition;
+	gap: 16px;
+
+	&.active {
+		grid-template-rows: 1fr max-content;
+
+		#{$self}__show {
+			img {
+				transform: rotate(180deg);
+			}
+		}
+
+		#{$self}__content {
+			opacity: 1;
+		}
+	}
+
+	&__show {
+		@include flex-center;
+
+		width: fluid(50px, 40px); height: fluid(50px, 40px);
+		background: #ffffff;
+		border-radius: 10px;
+		cursor: pointer;
+		box-shadow: 0px 6px 20px 0px #0078BE33;
+
+		img {
+			width: 24px;
+			height: 20px;
+			object-fit: contain;
+			transition: all $transition;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		overflow: hidden;
+		transition: all $transition;
+		opacity: 0;
+	}
+}

@@ -1,0 +1,65 @@
+@use 'lib' as *;
+
+.problems {
+	$self: &;
+
+	padding: fluid(48px, 24px) 0;
+
+	&__container {
+
+	}
+
+	&__title {
+		margin-bottom: fluid(32px, 24px);
+	}
+
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 24px;
+		margin-bottom: fluid(36px, 24px);
+
+		@include media("<=md") {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media("<=xs") {
+			grid-template-columns: 100%;
+		}
+	}
+
+	&__card {
+		padding: 24px;
+		background: #EAEBED;
+		border-radius: 20px;
+	}
+
+	&__card-up {
+		display: flex;
+		flex-direction: row;
+		gap: 18px;
+		align-items: center;
+		margin-bottom: 18px;
+	}
+
+	&__card-icon {
+		width: fluid(60px, 48px); height: fluid(60px, 48px);
+	}
+
+	&__card-title {
+		font-weight: 700;
+		font-size: fluid(24px, 20px);
+	}
+
+	&__card-text {
+		font-weight: 600;
+		line-height: 150%;
+	}
+
+	&__desc {
+		color: $orange;
+		font-weight: 600;
+		font-size: fluid(24px, 14px);
+	}
+
+}

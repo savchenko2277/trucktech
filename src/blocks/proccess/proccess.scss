@@ -1,0 +1,42 @@
+@use 'lib' as *;
+
+.proccess {
+	$self: &;
+
+	padding: fluid(80px, 40px) 0;
+	overflow: hidden;
+
+	&__container {
+
+	}
+
+	&__title {
+		margin-bottom: 8px;
+	}
+
+	&__desc {
+		margin-bottom: 16px;
+		font-size: fluid(20px, 18px);
+	}
+
+	&__swiper.swiper {
+		overflow: visible;
+	}
+
+	&__slide {
+		max-width: 378px;
+	}
+
+	&__slide-img {
+		width: 100%;
+		aspect-ratio: 378.7724304199219 / 409.7537841796875;
+		border-radius: 20px;
+		overflow: hidden;
+		margin-bottom: 16px;
+	}
+
+	&__slide-text {
+		font-size: fluid(20px, 16px);
+	}
+
+}

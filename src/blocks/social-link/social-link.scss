@@ -1,0 +1,13 @@
+@use 'lib' as *;
+
+.social-link {
+	$self: &;
+
+	width: fluid(50px, 40px); height: fluid(50px, 40px);
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+}

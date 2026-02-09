@@ -1,0 +1,106 @@
+@use 'lib' as *;
+
+.special {
+	$self: &;
+
+	padding: fluid(64px, 48px) 0;
+	color: #ffffff;
+	background: #0F0F0F;
+
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(10, 1fr);
+		gap: 24px;
+
+		@include media("<=sm") {
+			grid-template-columns: repeat(5, 1fr);
+		}
+	}
+
+	&__content {
+		grid-column: auto/ span 7;
+
+		@include media("<=lg") {
+			grid-column: auto / span 5;
+		}
+	}
+
+	&__title {
+		margin-bottom: 16px;
+	}
+
+	&__text {
+		line-height: 120%;
+		font-size: fluid(18px, 16px);
+		color: #CFCFCF;
+		margin-bottom: 24px;
+	}
+
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 24px;
+
+		@include media("<=lg") {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media("<=md") {
+			grid-template-columns: 100%;
+		}
+	}
+
+	&__card {
+		border-radius: 10px;
+		padding: 18px;
+		background: #222222;
+	}
+
+	&__card-up {
+		display: flex;
+		flex-direction: row;
+		align-items: start;
+		justify-content: space-between;
+		gap: 16px;
+		font-size: fluid(28px, 22px);
+		color: $orange;
+		margin-bottom: 22px;
+
+		b {
+			padding: 6px 8px;
+			background: #0F0F0F;
+			border-radius: 5px;
+			font-size: 16px;
+			font-weight: 400;
+			color: #CFCFCF;
+		}
+	}
+
+	&__card-text {
+		line-height: 150%;
+		color: #CFCFCF;
+	}
+
+	&__image {
+		border-radius: 10px;
+		overflow: hidden;
+		grid-column: auto / span 3;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		@include media("<=lg") {
+			grid-column: auto / span 5;
+			aspect-ratio: 1 / 1;
+			width: 100%;
+		}
+
+		@include media("<=sm") {
+			order: -1;
+		}
+	}
+
+}

@@ -1,0 +1,74 @@
+@use 'lib' as *;
+
+.dealers {
+	$self: &;
+
+	color: #ffffff;
+	background: #0F0F0F;
+	padding-top: 48px;
+	padding-bottom: fluid(100px, 48px);
+
+	&__container {
+
+	}
+
+	&__title {
+		margin-bottom: fluid(32px, 24px);
+	}
+
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 24px;
+		margin-bottom: fluid(32px, 24px);
+
+		@include media("<=lg") {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		@include media("<=md") {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include media("<=sm") {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media("<=xs") {
+			grid-template-columns: 100%;
+		}
+	}
+
+	&__card {
+		@include flex-center;
+
+		padding: 8px;
+		background: #222222;
+		border-radius: 10px;
+
+		@include media("<=xs") {
+			height: 60px
+
+			img {
+				height: 100%;
+			}
+		}
+	}
+
+	&__more {
+		@include flex-center;
+
+		width: fit-content;
+		border: 1px solid #FFFFFF;
+		border-radius: 10px;
+		padding: 16px 14px;
+		font-weight: 500;
+		transition: all $transition;
+
+		&:hover {
+			background: #FFFFFF;
+			color: $text-main;
+		}
+	}
+
+}

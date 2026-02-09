@@ -1,0 +1,96 @@
+@use 'lib' as *;
+
+.services {
+	$self: &;
+
+	padding: fluid(48px, 24px) 0;
+
+	&__container {}
+
+	&__title {
+		margin-bottom: fluid(32px, 28px);
+	}
+
+	&__tabs {}
+
+	&__tabs-navigation {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: fluid(24px, 8px);
+		margin-bottom: 36px;
+	}
+
+	&__tabs-button {
+		@include flex-center;
+
+		font-size: 14px;
+		font-weight: 700;
+		border-radius: 6px;
+		background: #EFF3F8;
+		flex: 1 1 auto;
+		color: #0C1F28;
+		padding: 16px 24px;
+		transition: all $transition;
+
+		&.active {
+			background: $orange;
+			color: #FFFFFF;
+		}
+	}
+
+	&__tab {
+		display: none;
+
+		&.active {
+			display: grid;
+			grid-template-columns: fluid(600px, 320px) 1fr;
+			flex-direction: row;
+			gap: fluid(60px, 32px);
+			
+			animation: fadeIn 0.3s;
+
+			@include media("<=sm") {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+
+	&__image {
+		overflow: hidden;
+		border-radius: 20px;
+		width: 100%;
+		position: relative;
+		min-height: 400px;
+
+		img {
+
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		@include media("<=sm") {
+			aspect-ratio: 1 / 1;
+			min-height: auto;
+		}
+	}
+
+	&__tab-title {
+		margin-bottom: 20px;
+		font-weight: 700;
+		font-size: fluid(28px, 22px);
+	}
+
+	&__tab-content {
+		padding: 30px 0;
+
+		@include media("<=sm") {
+			padding: 0;
+		}
+	}
+
+}
